@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_product_contract" name="Products" sequence="12"
+        parent="contract.menu_configuration"  groups="contract.group_contract_manager"/>/>
+
+    <menuitem action="contract_product_state_action"
+              id="menu_product_state"
+              name="Products states"
+              parent="menu_product_contract"
+              groups="contract.group_contract_manager"
+              sequence="1"/>
+
+    <menuitem action="contract_product_warehouse_action"
+              id="menu_product_warehouse"
+              name="Attributes of warehouse"
+              parent="menu_product_contract"
+              groups="contract.group_contract_manager"
+              sequence="2"/>
+
+     <menuitem id="menu_product_template_contract" name="Products" sequence="5"
+        parent="contract.menu_main_contract"  groups="contract.group_contract_manager"/>/>
+
+     <menuitem action="product_template_product_action"
+               id="menu_product_template_action_contract"
+               parent="menu_product_template_contract"
+               groups="contract.group_contract_manager,contract.group_contract_user"
+               sequence="1"/>
+
+     <menuitem action="contract_product_product_action"
+               id="menu_product_product_action_contract"
+               parent="menu_product_template_contract"
+               groups="contract.group_contract_manager,contract.group_contract_user"
+               sequence="2"/>
+
+</odoo>

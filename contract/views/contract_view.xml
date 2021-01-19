@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_contract_sale_order" model="ir.actions.act_window">
+            <field name="name">Quotations and Sales</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field name="context">{'search_default_contract_id': active_id,
+                                   'default_contract_id': active_id,
+                                  }</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new quotation, the first step of a new sale!
+              </p><p>
+                Once the quotation is confirmed by the customer, it becomes a sales order.<br/>
+              </p>
+            </field>
+    </record>
+
+    <record id="contract_state_tree" model="ir.ui.view">
+            <field name="name">contract.state.tree</field>
+            <field name="model">contract.state</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="close_contract"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+    </record>
+
+     <record id="view_contract_state_form" model="ir.ui.view">
+            <field name="name">contract.state.form</field>
+            <field name="model">contract.state</field>
+            <field name="arch" type="xml">
+                <form string="Contract state">
+                   <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="close_contract"/>
+                                <field name="active"/>
+                                <field name="company_id" groups="base.group_multi_company"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+   </record>
+
+    <record id="contract_state_action" model="ir.actions.act_window">
+            <field name="name">Contracts states</field>
+            <field name="res_model">contract.state</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                  <p class="o_view_nocontent_smiling_face">
+                    Create a new contract state, the first step of a new contract state!
+                  </p>
+            </field>
+	</record>
+
+    <record id="contract_view_search" model="ir.ui.view">
+            <field name="name">contract.contract.search</field>
+            <field name="model">contract.contract</field>
+            <field name="arch" type="xml">
+                <search string="Contracts">
+                    <field name="name"/>
+                    <field name="number"/>
+                    <field name="partner_id"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="state_id"/>
+                     <filter string="Contract open" name="contract_open"
+                                      domain="[('state_id.close_contract', '=', False)]"/>
+                    <filter string="Contract closed" name="contract_closed"
+                                      domain="[('state_id.close_contract', '=', True)]"/>
+                    <group expand="0" string="Group By">
+                        <filter name="partner_name" context="{'group_by' : 'partner_id'}"
+                                string="Partner"/>
+                        <filter name="state_name" context="{'group_by' : 'state_id'}"
+                                string="State"/>
+                        <filter name="company_name" context="{'group_by' : 'company_id'}"
+                                string="Company"/>
+                    </group>
+                </search>
+            </field>
+    </record>
+
+    <record id="contract_contract_tree" model="ir.ui.view">
+            <field name="name">contract.contract.tree</field>
+            <field name="model">contract.contract</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+    </record>
+
+   <record id="view_contract_contract_form" model="ir.ui.view">
+            <field name="name">contract.contract.form</field>
+            <field name="model">contract.contract</field>
+            <field name="arch" type="xml">
+                <form string="Contract">
+                   <sheet>
+                       <div class="oe_button_box" name="button_box">
+<!--                           <button name="action_documents" type="object" class="oe_stat_button" icon="fa-file-text-o">-->
+<!--                                <div class="o_field_widget o_stat_info">-->
+<!--                                    <span class="o_stat_value"><field name="document_count"/></span>-->
+<!--                                    <span class="o_stat_text">Documents</span>-->
+<!--                                </div>-->
+<!--                            </button>-->
+                           <button name="%(documents.document_action)d"
+                                    context="{'search_default_contract_id': active_id, 'default_contract_id': active_id}"
+                                    class="oe_stat_button"
+                                    icon="fa-file-text-o"
+                                    type="action">
+                                    <field name="document_count" widget="statinfo"/>
+                                </button>
+                            <button
+                                    name="%(contract.action_contract_sale_order)d"
+                                    type="action"
+                                    context="{'search_default_partner_id': partner_id}"
+                                    class="oe_stat_button"
+                                    icon="fa-usd">
+                                   <field name="sale_count" widget="statinfo" string="Sales"/>
+                            </button>
+                        </div>
+                       <widget name="web_ribbon" title="Closed" bg_color="bg-danger" attrs="{'invisible': [('is_closed', '=', False)]}"/>
+                       <div class="oe_title">
+                        <label for="name" class="oe_edit_only" string="Contract name"/>
+                        <h1>
+                            <field name="name" placeholder="Contract name..."
+                               attrs="{'readonly': [('is_closed','=', True),('id','!=', False)]}"/>
+                        </h1>
+                        <div name="options_active"/>
+                       </div>
+                        <group>
+                            <group>
+                                  <field name="is_closed" invisible="1"/>
+                                  <field name="state" invisible="1"/>
+                                  <field name="number" attrs="{'readonly': [('id','!=', False)]}"/>
+                                  <field name="partner_id" attrs="{'readonly': [('id','!=', False)]}"/>
+                                  <field name="self_renewing"  attrs="{'readonly': [('is_closed','=', True),('id','!=', False)]}"/>
+                            </group>
+                            <group>
+                                <field name="date_start" attrs="{'readonly': [('is_closed','=', True),('id','!=', False)]}"/>
+                                <field name="date_end" attrs="{'readonly': [('is_closed','=', True),('id','!=', False)]}"/>
+                                <field name="state_id" attrs="{'readonly': [('state','=', 'closed'),('id','!=', False)]}"
+                                                      force_save="1"/>
+                                <field name="user_id" attrs="{'readonly': [('is_closed','=', True),('id','!=', False)]}"/>
+                                <field name="company_id" attrs="{'readonly': [('is_closed','=', True),('id','!=', False)]}"
+                                       groups="base.group_multi_company"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+    </record>
+
+    <record id="contract_contract_action" model="ir.actions.act_window">
+            <field name="name">Contracts</field>
+            <field name="res_model">contract.contract</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                  <p class="o_view_nocontent_smiling_face">
+                    Create a new contract, the first step of a new contract!
+                  </p>
+            </field>
+	</record>
+
+</odoo>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem name="Contracts"
+            id="menu_main_contract"
+            web_icon="contract,static/description/icon.png"
+            sequence="60"/>
+
+    <menuitem action="contract_contract_action"
+              id="menu_contract"
+              name="Contracts"
+              parent="menu_main_contract"
+              groups="contract.group_contract_manager,contract.group_contract_user"/>
+              sequence="1"/>
+
+    <menuitem id="menu_configuration"
+              name="Configuration"
+              parent="menu_main_contract"
+              groups="contract.group_contract_manager"/>
+              sequence="10"/>
+
+    <menuitem id="menu_contract_contract" name="Contracts" sequence="11"
+        parent="menu_configuration"/>
+
+    <menuitem action="contract_state_action"
+              id="menu_contract_state"
+              name="Contracts states"
+              parent="menu_contract_contract"
+              groups="contract.group_contract_manager"/>
+              sequence="1"/>
+
+    <menuitem id="contract_partner_menu"
+            parent="menu_main_contract"
+            action="account.res_partner_action_customer"
+            sequence="4" groups="contract.group_contract_manager"/>
+
+
+
+
+
+</odoo>
