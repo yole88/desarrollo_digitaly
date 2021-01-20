@@ -1,0 +1,66 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* contract_subscription
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-20 21:08+0000\n"
+"PO-Revision-Date: 2021-01-20 21:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: contract_subscription
+#: model:ir.model,name:contract_subscription.model_contract_contract
+msgid "Contract"
+msgstr "Contrato"
+
+#. module: contract_subscription
+#: model:ir.model.fields,field_description:contract_subscription.field_sale_subscription__contract_ids
+msgid "Contract "
+msgstr "Contrato"
+
+#. module: contract_subscription
+#: code:addons/contract_subscription/models/subscription.py:0
+#: model_terms:ir.ui.view,arch_db:contract_subscription.sale_subscription_form_view_inherit
+#, python-format
+msgid "Contracts"
+msgstr "Contratos"
+
+#. module: contract_subscription
+#: model:ir.model.fields,field_description:contract_subscription.field_contract_contract__display_name
+#: model:ir.model.fields,field_description:contract_subscription.field_sale_subscription__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: contract_subscription
+#: model:ir.model.fields,field_description:contract_subscription.field_contract_contract__id
+#: model:ir.model.fields,field_description:contract_subscription.field_sale_subscription__id
+msgid "ID"
+msgstr ""
+
+#. module: contract_subscription
+#: model:ir.model.fields,field_description:contract_subscription.field_contract_contract____last_update
+#: model:ir.model.fields,field_description:contract_subscription.field_sale_subscription____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: contract_subscription
+#: model:ir.model,name:contract_subscription.model_sale_subscription
+msgid "Subscription"
+msgstr "Suscripción"
+
+#. module: contract_subscription
+#: model:ir.model.fields,field_description:contract_subscription.field_sale_subscription__subscription_count
+msgid "Subscription Count"
+msgstr "Subscripciones"
+
+#. module: contract_subscription
+#: model:ir.model.fields,field_description:contract_subscription.field_contract_contract__subscription_id
+msgid "Subscriptions"
+msgstr "Subscripciones"

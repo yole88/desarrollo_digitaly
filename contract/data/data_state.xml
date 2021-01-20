@@ -4,14 +4,17 @@
 
         <record id="contract_state_data_0" model="contract.state">
             <field name="name">Abierto</field>
+            <field name="sequence">1</field>
         </record>
 
         <record id="contract_state_data_1" model="contract.state">
             <field name="name">Cerrado</field>
+            <field name="sequence">2</field>
         </record>
 
         <record id="contract_state_data_2" model="contract.state">
             <field name="name">Cancelado</field>
+            <field name="sequence">3</field>
         </record>
 
     </data>

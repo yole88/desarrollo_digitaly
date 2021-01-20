@@ -1,0 +1,262 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* contract_product
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-19 19:54+0000\n"
+"PO-Revision-Date: 2021-01-19 19:54+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: contract_product
+#: model:ir.model.fields,help:contract_product.field_product_product__type
+#: model:ir.model.fields,help:contract_product.field_product_template__type
+msgid ""
+"A storable product is a product for which you manage stock. The Inventory app has to be installed.\n"
+"A consumable product is a product for which stock is not managed.\n"
+"A service is a non-material product you provide."
+msgstr ""
+"Un producto almacenable es un producto para el que gestiona stock. La aplicación de inventario debe estar instalada.\n"
+"Un producto consumible es un producto para el que no se gestionan las existencias.\n"
+"Un servicio es un producto no material."
+
+#. module: contract_product
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_line__attributes_id
+msgid "Attribute"
+msgstr "Atributo"
+
+#. module: contract_product
+#: model:ir.model.fields,field_description:contract_product.field_product_product__attributes_ids
+#: model:ir.model.fields,field_description:contract_product.field_product_template__attributes_ids
+#: model_terms:ir.ui.view,arch_db:contract_product.product_template_contract_form_view_inherit
+msgid "Attributes"
+msgstr "Atributos"
+
+#. module: contract_product
+#: model:ir.actions.act_window,name:contract_product.contract_product_warehouse_action
+#: model:ir.ui.menu,name:contract_product.menu_product_warehouse
+msgid "Attributes of warehouse"
+msgstr "Atributos de almacén"
+
+#. module: contract_product
+#: model:ir.model,name:contract_product.model_contract_product_warehouse
+msgid "Attributes product warehouse"
+msgstr "Atributos de almacén de productos"
+
+#. module: contract_product
+#: model:ir.model.fields,field_description:contract_product.field_product_product__available
+#: model:ir.model.fields,field_description:contract_product.field_product_template__available
+msgid "Available"
+msgstr "Disponible"
+
+#. module: contract_product
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_image__color
+msgid "Color Index"
+msgstr "Color"
+
+#. module: contract_product
+#: model_terms:ir.ui.view,arch_db:contract_product.product_template_contract_form_view_inherit
+msgid "Contact image"
+msgstr "Imagen de Contacto"
+
+#. module: contract_product
+#: model:ir.model,name:contract_product.model_contract_contract
+msgid "Contract"
+msgstr "Contrato"
+
+#. module: contract_product
+#: model:ir.model,name:contract_product.model_contract_product_state
+msgid "Contract product state"
+msgstr "Estado del producto"
+
+#. module: contract_product
+#: model_terms:ir.actions.act_window,help:contract_product.contract_product_warehouse_action
+msgid ""
+"Create a new product attributes, the first step of a new product attributes!"
+msgstr ""
+"Crear un nuevo atributo,el primer paso de un nuevo atributo de producto!"
+
+#. module: contract_product
+#: model_terms:ir.actions.act_window,help:contract_product.contract_product_state_action
+msgid "Create a new product state, the first step of a new product state!"
+msgstr ""
+"Crear un nuevo estado de producto,el primer paso de un nuevo estado de "
+"producto!"
+
+#. module: contract_product
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_image__create_uid
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_line__create_uid
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_state__create_uid
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_warehouse__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: contract_product
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_image__create_date
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_line__create_date
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_state__create_date
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_warehouse__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: contract_product
+#: model:ir.model.fields,field_description:contract_product.field_contract_contract__display_name
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_image__display_name
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_line__display_name
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_state__display_name
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_warehouse__display_name
+#: model:ir.model.fields,field_description:contract_product.field_product_template__display_name
+#: model:ir.model.fields,field_description:contract_product.field_sale_order__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: contract_product
+#: model:ir.model.fields,field_description:contract_product.field_contract_contract__id
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_image__id
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_line__id
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_state__id
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_warehouse__id
+#: model:ir.model.fields,field_description:contract_product.field_product_template__id
+#: model:ir.model.fields,field_description:contract_product.field_sale_order__id
+msgid "ID"
+msgstr ""
+
+#. module: contract_product
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_image__image_128
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_image__image_1920
+msgid "Image"
+msgstr "Imagen"
+
+#. module: contract_product
+#: model:ir.model.fields,field_description:contract_product.field_product_product__image_ids
+#: model:ir.model.fields,field_description:contract_product.field_product_template__image_ids
+#: model_terms:ir.ui.view,arch_db:contract_product.product_template_contract_form_view_inherit
+msgid "Images"
+msgstr "Fotos"
+
+#. module: contract_product
+#: model:ir.model.fields,field_description:contract_product.field_contract_contract____last_update
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_image____last_update
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_line____last_update
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_state____last_update
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_warehouse____last_update
+#: model:ir.model.fields,field_description:contract_product.field_product_template____last_update
+#: model:ir.model.fields,field_description:contract_product.field_sale_order____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: contract_product
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_image__write_uid
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_line__write_uid
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_state__write_uid
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_warehouse__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: contract_product
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_image__write_date
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_line__write_date
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_state__write_date
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_warehouse__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: contract_product
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_state__name
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_warehouse__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: contract_product
+#: model_terms:ir.actions.act_window,help:contract_product.product_template_product_action
+msgid "No product found. Let's create one!"
+msgstr "No se ha encontrado ningún producto. Vamos a crear uno!"
+
+#. module: contract_product
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_image__product_id
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_line__product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: contract_product
+#: model:ir.model,name:contract_product.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: contract_product
+#: model:ir.model.fields,field_description:contract_product.field_product_product__type
+#: model:ir.model.fields,field_description:contract_product.field_product_template__type
+msgid "Product Type"
+msgstr "Tipo de producto"
+
+#. module: contract_product
+#: model:ir.actions.act_window,name:contract_product.contract_product_product_action
+#: model:ir.ui.menu,name:contract_product.menu_product_product_action_contract
+msgid "Product Variants"
+msgstr "Variantes de producto"
+
+#. module: contract_product
+#: model:ir.model,name:contract_product.model_contract_product_image
+#: model_terms:ir.ui.view,arch_db:contract_product.view_contract_product_image_form
+msgid "Product image"
+msgstr "Imagen de producto"
+
+#. module: contract_product
+#: model:ir.model.fields,field_description:contract_product.field_product_product__state_id
+#: model:ir.model.fields,field_description:contract_product.field_product_template__state_id
+msgid "Product state"
+msgstr "Estado de producto"
+
+#. module: contract_product
+#: model:ir.model,name:contract_product.model_contract_product_line
+msgid "Product warehouse line"
+msgstr "Línea de almacén de productos"
+
+#. module: contract_product
+#: model:ir.actions.act_window,name:contract_product.product_template_product_action
+#: model:ir.ui.menu,name:contract_product.menu_product_contract
+#: model:ir.ui.menu,name:contract_product.menu_product_template_action_contract
+#: model:ir.ui.menu,name:contract_product.menu_product_template_contract
+msgid "Products"
+msgstr "Productos"
+
+#. module: contract_product
+#: model:ir.actions.act_window,name:contract_product.contract_product_state_action
+#: model:ir.ui.menu,name:contract_product.menu_product_state
+msgid "Products states"
+msgstr "Estados de productos"
+
+#. module: contract_product
+#: model:ir.model,name:contract_product.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: contract_product
+#: code:addons/contract_product/models/sale.py:0
+#, python-format
+msgid "This product is not available for sale."
+msgstr "Este producto no está disponible para la venta."
+
+#. module: contract_product
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_image__title
+msgid "Title"
+msgstr "Nombre"
+
+#. module: contract_product
+#: model_terms:ir.actions.act_window,help:contract_product.product_template_product_action
+msgid "Track your stock quantities by creating storable products."
+msgstr ""
+"Realice un seguimiento de sus existencias creando productos almacenables"
+
+#. module: contract_product
+#: model:ir.model.fields.selection,name:contract_product.selection__product_template__type__warehouse
+#: model_terms:ir.ui.view,arch_db:contract_product.product_template_contract_form_view_inherit
+msgid "Warehouse"
+msgstr "Almacén"

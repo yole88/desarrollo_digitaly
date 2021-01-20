@@ -6,6 +6,7 @@ access_contract_state,contract.state,model_contract_state,base.group_user,1,1,1,
 
 manager_contract_contract,contract.contract,model_contract_contract,contract.group_contract_manager,1,1,1,1
 manager_contract_state,contract.state,model_contract_state,contract.group_contract_manager,1,1,1,1
+manager_res_partner,res_partner_manager,model_res_partner,contract.group_contract_manager,1,1,1,1
 
 
 
@@ -13,3 +14,4 @@ manager_contract_state,contract.state,model_contract_state,contract.group_contra
 
 user_contract_contract,contract.contract,model_contract_contract,contract.group_contract_user,1,0,0,0
 user_contract_state,contract.state,model_contract_state,contract.group_contract_user,1,0,0,0
+user_res_partner,res_partner_user,model_res_partner,contract.group_contract_user,1,0,0,0

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <record id="contract_form_view_inherit" model="ir.ui.view">
+            <field name="name">contract.form.inherit</field>
+            <field name="model">contract.contract</field>
+            <field name="inherit_id" ref="contract.view_contract_contract_form"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                       <field name="subscription_id" domain="[('partner_id', '=', partner_id),
+                                                        ('stage_id.category', '!=', 'closed')]"
+                                attrs="{'readonly': [('state','=', 'closed'),('id','!=', False)]}"/>
+                </field>
+            </field>
+    </record>
+
+</odoo>

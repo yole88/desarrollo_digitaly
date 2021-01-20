@@ -11,6 +11,7 @@ class ContractState(models.Model):
     _description = 'Contract state'
 
     name = fields.Char('Name', required=True)
+    sequence = fields.Integer(default=1)
     active = fields.Boolean('Active', default=True)
     close_contract = fields.Boolean('Close contract')
     company_id = fields.Many2one('res.company', string='Company', required=True,
@@ -21,6 +22,7 @@ class ContractState(models.Model):
 class Contract(models.Model):
     _name = 'contract.contract'
     _description = 'Contract'
+    _order = 'id Desc'
 
     name = fields.Char('Name', required=True,
                        help='Object of the contract')
