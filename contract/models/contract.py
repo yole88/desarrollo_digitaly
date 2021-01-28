@@ -21,6 +21,7 @@ class ContractState(models.Model):
 
 class Contract(models.Model):
     _name = 'contract.contract'
+    _inherit = ['portal.mixin', 'mail.thread', 'mail.activity.mixin', 'utm.mixin']
     _description = 'Contract'
     _order = 'id Desc'
 
@@ -45,6 +46,9 @@ class Contract(models.Model):
                               ('closed', 'Closed')],
                              'Status',
                              track_visibility='onchange', default='draft')
+    doc_count = fields.Integer(compute='_compute_attached_docs_count', string="Number of documents attached")
+    currency_id = fields.Many2one(related="company_id.currency_id", string="Currency", readonly=True)
+    amount = fields.Monetary(string='Amount')
 
     def _compute_document_count(self):
         read_group_var = self.env['documents.document'].read_group(
@@ -67,10 +71,28 @@ class Contract(models.Model):
             'context': {
                 "search_default_contract_id": self.id,
                 "default_contract_id": self.id,
-                "searchpanel_default_folder_id": False
             },
         }
         return value
+
+    def _compute_attached_docs_count(self):
+        Attachment = self.env['ir.attachment']
+        for c in self:
+            c.doc_count = Attachment.search_count([
+                '&',
+                ('res_model', '=', 'contract.contract'), ('res_id', '=', c.id)
+            ])
+
+    def attachment_documents(self):
+        attachment_action = self.env.ref('base.action_attachment')
+        action = attachment_action.read()[0]
+        action['domain'] = str([
+            '&',
+            ('res_model', '=', 'contract.contract'),
+            ('res_id', 'in', self.ids)
+        ])
+        action['context'] = "{'default_res_model': '%s','default_res_id': %d, 'create': False}" % (self._name, self.id)
+        return action
 
     @api.onchange('date_start')
     def _set_end_date(self):

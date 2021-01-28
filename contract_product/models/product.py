@@ -36,6 +36,7 @@ class ProductWarehouseLine(models.Model):
     _description = 'Product warehouse line'
 
     attributes_id = fields.Many2one('contract_product.warehouse', string='Attribute')
+    value = fields.Char('Value', required=True)
     product_id = fields.Many2one('product.template', string='Product')
 
 

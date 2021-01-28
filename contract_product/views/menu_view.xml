@@ -18,7 +18,7 @@
               groups="contract.group_contract_manager"
               sequence="2"/>
 
-     <menuitem id="menu_product_template_contract" name="Products" sequence="5"
+     <menuitem id="menu_product_template_contract" name="Products" sequence="7"
         parent="contract.menu_main_contract"  groups="contract.group_contract_manager"/>/>
 
      <menuitem action="product_template_product_action"

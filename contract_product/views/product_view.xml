@@ -49,6 +49,7 @@
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">product.template</field>
         <field name="view_mode">kanban,tree,form</field>
+        <field name="search_view_id" ref="product.product_template_search_view"/>
         <field name="context">{'default_type': 'warehouse'}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
@@ -83,6 +84,20 @@
             </field>
     </record>
 
+    <record id="product_template_search_view_inherit_contract_product" model="ir.ui.view">
+        <field name="name">product.template.search.contract.product.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_search_view"/>
+        <field name="arch" type="xml">
+                <xpath expr="//filter[@name='inactive']" position="before">
+                      <filter name="filter_available" string="Available" domain="[('available', '=', True)]"/>
+                      <separator/>
+                     <filter name="filter_not_available" string="Not available" domain="[('available', '=', False)]"/>
+                </xpath>
+
+        </field>
+    </record>
+
      <record id="product_template_contract_form_view_inherit" model="ir.ui.view">
             <field name="name">product.template.contract.form.inherit</field>
             <field name="model">product.template</field>
@@ -100,6 +115,7 @@
                                 <field name="attributes_ids" widget="section_and_note_one2many" mode="tree,kanban">
                                  <tree string="Attributes" editable="bottom">
                                      <field name="attributes_id"/>
+                                     <field name="value"/>
                                  </tree>
                              </field>
                             </page>

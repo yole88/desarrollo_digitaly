@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 19:54+0000\n"
-"PO-Revision-Date: 2021-01-19 19:54+0000\n"
+"POT-Creation-Date: 2021-01-28 02:23+0000\n"
+"PO-Revision-Date: 2021-01-28 02:23+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -53,6 +53,7 @@ msgstr "Atributos de almacén de productos"
 #. module: contract_product
 #: model:ir.model.fields,field_description:contract_product.field_product_product__available
 #: model:ir.model.fields,field_description:contract_product.field_product_template__available
+#: model_terms:ir.ui.view,arch_db:contract_product.product_template_search_view_inherit_contract_product
 msgid "Available"
 msgstr "Disponible"
 
@@ -180,6 +181,11 @@ msgid "No product found. Let's create one!"
 msgstr "No se ha encontrado ningún producto. Vamos a crear uno!"
 
 #. module: contract_product
+#: model_terms:ir.ui.view,arch_db:contract_product.product_template_search_view_inherit_contract_product
+msgid "Not available"
+msgstr "No disponoble"
+
+#. module: contract_product
 #: model:ir.model.fields,field_description:contract_product.field_contract_product_image__product_id
 #: model:ir.model.fields,field_description:contract_product.field_contract_product_line__product_id
 msgid "Product"
@@ -254,6 +260,11 @@ msgstr "Nombre"
 msgid "Track your stock quantities by creating storable products."
 msgstr ""
 "Realice un seguimiento de sus existencias creando productos almacenables"
+
+#. module: contract_product
+#: model:ir.model.fields,field_description:contract_product.field_contract_product_line__value
+msgid "Value"
+msgstr "Valor"
 
 #. module: contract_product
 #: model:ir.model.fields.selection,name:contract_product.selection__product_template__type__warehouse

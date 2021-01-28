@@ -100,6 +100,9 @@
                     <field name="date_start"/>
                     <field name="date_end"/>
                     <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="amount" sum="Total" widget="monetary" decoration-bf="1" optional="show"/>
+                    <field name="state_id" optional="hide"/>
+                    <field name="currency_id" invisible="1"/>
                 </tree>
             </field>
     </record>
@@ -111,19 +114,12 @@
                 <form string="Contract">
                    <sheet>
                        <div class="oe_button_box" name="button_box">
-<!--                           <button name="action_documents" type="object" class="oe_stat_button" icon="fa-file-text-o">-->
-<!--                                <div class="o_field_widget o_stat_info">-->
-<!--                                    <span class="o_stat_value"><field name="document_count"/></span>-->
-<!--                                    <span class="o_stat_text">Documents</span>-->
-<!--                                </div>-->
-<!--                            </button>-->
-                           <button name="%(documents.document_action)d"
-                                    context="{'search_default_contract_id': active_id, 'default_contract_id': active_id}"
-                                    class="oe_stat_button"
-                                    icon="fa-file-text-o"
-                                    type="action">
-                                    <field name="document_count" widget="statinfo"/>
-                                </button>
+                           <button name="attachment_documents" type="object" class="oe_stat_button" icon="fa-file-text-o">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_value"><field name="doc_count"/></span>
+                                    <span class="o_stat_text">Documents</span>
+                                </div>
+                            </button>
                             <button
                                     name="%(contract.action_contract_sale_order)d"
                                     type="action"
@@ -151,6 +147,8 @@
                                   <field name="self_renewing"  attrs="{'readonly': [('is_closed','=', True),('id','!=', False)]}"/>
                             </group>
                             <group>
+                                <field name="amount" widget="monetary"
+                                       attrs="{'readonly': [('is_closed','=', True),('id','!=', False)]}"/>
                                 <field name="date_start" attrs="{'readonly': [('is_closed','=', True),('id','!=', False)]}"/>
                                 <field name="date_end" attrs="{'readonly': [('is_closed','=', True),('id','!=', False)]}"/>
                                 <field name="state_id" attrs="{'readonly': [('state','=', 'closed'),('id','!=', False)]}"
@@ -158,9 +156,15 @@
                                 <field name="user_id" attrs="{'readonly': [('is_closed','=', True),('id','!=', False)]}"/>
                                 <field name="company_id" attrs="{'readonly': [('is_closed','=', True),('id','!=', False)]}"
                                        groups="base.group_multi_company"/>
+                                <field name="currency_id" invisible="1"/>
                             </group>
                         </group>
                     </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
                 </form>
             </field>
     </record>
